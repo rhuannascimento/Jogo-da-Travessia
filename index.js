@@ -5,6 +5,7 @@ let winScreen = document.querySelector("#win");
 let leftSide = document.querySelector(".left");
 let rightSide = document.querySelector(".right")
 let boatDiv = document.querySelector(".boatDiv");
+let boat = document.querySelector(".boat");
 
 let sheep = document.createElement("img");
 let wolf = document.createElement("img");
@@ -130,4 +131,12 @@ carrot.addEventListener('click', () => {
         }
     }
 
+})
+
+boat.addEventListener('click', () => {
+    if(boatDiv.style.justifyContent == 'flex-start'){
+        boatDiv.style.justifyContent = 'flex-end';
+    }else{
+        boatDiv.style.justifyContent = 'flex-start';
+    }
 })
