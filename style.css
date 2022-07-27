@@ -50,3 +50,10 @@ body{
     align-items: center;
     justify-content: space-evenly;
 }
+
+.animals{
+    cursor: pointer;
+    width: 90px;
+    height: 90px;
+    position: relative;
+}
