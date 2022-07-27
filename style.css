@@ -7,6 +7,18 @@ body{
     background-image: url("./images/terrain.png");
 }
 
+.container{
+    margin-top: 5%;
+    text-align: center;
+    height: fit-content;
+    width: fit-content;
+    padding: 2%;    
+    position: absolute;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.425);
+}
+
 .boat{
     width: 130px;
     height: 130px;
