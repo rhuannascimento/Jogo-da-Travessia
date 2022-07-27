@@ -1,6 +1,9 @@
 let start = document.querySelector("#start");
+let restart = document.querySelector("#restart");
+let again = document.querySelector("#again");
 
 let winScreen = document.querySelector("#win");
+let looseScreen = document.querySelector("#loose");
 
 let leftSide = document.querySelector(".left");
 let rightSide = document.querySelector(".right")
@@ -10,6 +13,9 @@ let boat = document.querySelector(".boat");
 let sheep = document.createElement("img");
 let wolf = document.createElement("img");
 let carrot = document.createElement("img");
+
+looseScreen.style.display="none";
+winScreen.style.display="none";
 
 sheep.id = "sheep";
 sheep.className = "animals";
@@ -40,6 +46,28 @@ start.addEventListener('click', () =>{
     leftSide.appendChild(sheep);
     leftSide.appendChild(wolf);
     leftSide.appendChild(carrot);
+    
+})
+
+restart.addEventListener('click', () =>{
+
+    looseScreen.style.display = "none";
+    startScreen.style.display = "block";
+    
+})
+
+again.addEventListener('click', () =>{
+    
+    sheep.style.position= "static";
+    wolf.style.position= "static";
+    carrot.style.position= "static";
+    leftSide.appendChild(sheep);
+    leftSide.appendChild(wolf);
+    leftSide.appendChild(carrot);
+
+    winScreen.style.display = "none";
+    startScreen.style.display = "block";
+
     
 })
 
@@ -138,5 +166,28 @@ boat.addEventListener('click', () => {
         boatDiv.style.justifyContent = 'flex-end';
     }else{
         boatDiv.style.justifyContent = 'flex-start';
+    }
+})
+
+boat.addEventListener('click', () =>{
+    
+    if(boatDiv.style.justifyContent == 'flex-start'){
+        if(rightSide.querySelector("#wolf")!=null && rightSide.querySelector("#sheep")!=null && rightSide.querySelector("#carrot")==null){
+           looseScreen.style.display="block"; 
+        }else if(rightSide.querySelector("#sheep")!=null && rightSide.querySelector("#carrot")!=null && rightSide.querySelector("#wolf")==null){
+            looseScreen.style.display="block";
+        }
+    }else{
+        if(leftSide.querySelector("#wolf")!=null && leftSide.querySelector("#sheep")!=null && leftSide.querySelector("#carrot")==null){
+            looseScreen.style.display="block"; 
+         }else if(leftSide.querySelector("#sheep")!=null && leftSide.querySelector("#carrot")!=null && leftSide.querySelector("#wolf")==null){
+            looseScreen.style.display="block"; 
+        }   
+    }   
+})
+
+document.body.addEventListener("click", () => {
+    if(rightSide.querySelector("#sheep")!=null && rightSide.querySelector("#carrot")!=null && rightSide.querySelector("#wolf")!=null){
+        winScreen.style.display="block";
     }
 })
