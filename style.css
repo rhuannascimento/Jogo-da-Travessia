@@ -5,8 +5,8 @@ body{
     width: 100vw;
     justify-content: center;
     background-image: url("./images/terrain.png");
-
-    object-fit: cover;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .container{
