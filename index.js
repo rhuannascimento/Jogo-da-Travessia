@@ -31,6 +31,10 @@ carrot.src = "./images/carrot.png"
 
 let cont = 0;
 
+sheep.addEventListener('click', () => {move(sheep.id, sheep)});
+wolf.addEventListener('click', () => {move(wolf.id, wolf)});
+carrot.addEventListener('click', () => {move(carrot.id, carrot)});
+
 start.addEventListener('click', () =>{
 
     let startScreen = document.querySelector("#startScreen");
@@ -71,95 +75,36 @@ again.addEventListener('click', () =>{
     
 })
 
-sheep.addEventListener('click', () => {
+function move(id, item){
 
     if(boatDiv.style.justifyContent == "flex-start"){
-        if(leftSide.querySelector("#sheep") != null && cont == 0){
-            leftSide.removeChild(sheep);
-            sheep.style.position="absolute";
-            boatDiv.appendChild(sheep);
+        if(leftSide.querySelector(`#${id}`) != null && cont == 0){
+            leftSide.removeChild(item);
+            item.style.position="absolute";
+            boatDiv.appendChild(item);
             cont++;
-        }else if(boatDiv.querySelector("#sheep")!=null){
-            boatDiv.removeChild(sheep);
-            sheep.style.position= "static";
-            leftSide.appendChild(sheep);
+        }else if(boatDiv.querySelector(`#${id}`)!=null){
+            boatDiv.removeChild(item);
+            item.style.position= "static";
+            leftSide.appendChild(item);
             cont--;
         }
     }else{
-        if(rightSide.querySelector("#sheep") != null && cont == 0){
-            rightSide.removeChild(sheep);
-            sheep.style.position="absolute";
-            boatDiv.appendChild(sheep);
+        if(rightSide.querySelector(`#${id}`) != null && cont == 0){
+            rightSide.removeChild(item);
+            item.style.position="absolute";
+            boatDiv.appendChild(item);
             cont++;
-        }else if(boatDiv.querySelector("#sheep")!=null){
-            boatDiv.removeChild(sheep);
-            sheep.style.position= "static";
-            rightSide.appendChild(sheep);
+        }else if(boatDiv.querySelector(`#${id}`)!=null){
+            boatDiv.removeChild(item);
+            item.style.position= "static";
+            rightSide.appendChild(item);
             cont--;
         }
     }
 
-})
+}
 
-wolf.addEventListener('click', () => {
-
-    if(boatDiv.style.justifyContent == "flex-start"){
-        if(leftSide.querySelector("#wolf") != null && cont == 0){
-            leftSide.removeChild(wolf);
-            wolf.style.position="absolute";
-            boatDiv.appendChild(wolf);
-            cont++;
-        }else if(boatDiv.querySelector("#wolf")!=null){
-            boatDiv.removeChild(wolf);
-            wolf.style.position= "static";
-            leftSide.appendChild(wolf);
-            cont--;
-        }
-    }else{
-        if(rightSide.querySelector("#wolf") != null && cont == 0){
-            rightSide.removeChild(wolf);
-            wolf.style.position="absolute";
-            boatDiv.appendChild(wolf);
-            cont ++;
-        }else if(boatDiv.querySelector("#wolf")!=null){
-            boatDiv.removeChild(wolf);
-            wolf.style.position= "static";
-            rightSide.appendChild(wolf);
-            cont--;
-        }
-    }
-
-})
-
-carrot.addEventListener('click', () => {
-
-    if(boatDiv.style.justifyContent == "flex-start"){
-        if(leftSide.querySelector("#carrot") != null && cont == 0){
-            leftSide.removeChild(carrot);
-            carrot.style.position="absolute";
-            boatDiv.appendChild(carrot);
-            cont++;
-        }else if(boatDiv.querySelector("#carrot")!=null){
-            boatDiv.removeChild(carrot);
-            carrot.style.position= "static";
-            leftSide.appendChild(carrot);
-            cont--;
-        }
-    }else{
-        if(rightSide.querySelector("#carrot") != null && cont == 0){
-            rightSide.removeChild(carrot);
-            carrot.style.position="absolute";
-            boatDiv.appendChild(carrot);
-            cont++;
-        }else if(boatDiv.querySelector("#carrot")!=null){
-            boatDiv.removeChild(carrot);
-            carrot.style.position= "static";
-            rightSide.appendChild(carrot);
-            cont--;
-        }
-    }
-
-})
 
 boat.addEventListener('click', () => {
     if(boatDiv.style.justifyContent == 'flex-start'){
