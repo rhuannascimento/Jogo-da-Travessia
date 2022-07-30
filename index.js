@@ -29,6 +29,8 @@ carrot.id = "carrot";
 carrot.className="animals";
 carrot.src = "./images/carrot.png"
 
+boatDiv.style.justifyContent = 'flex-start';
+
 let cont = 0;
 
 sheep.addEventListener('click', () => {move(sheep.id, sheep)});
@@ -41,12 +43,6 @@ start.addEventListener('click', () =>{
 
     startScreen.style.display = "none";
 
-    boatDiv.style.justifyContent = 'flex-start';
-    cont = 0;
-
-    sheep.style.position= "static";
-    wolf.style.position= "static";
-    carrot.style.position= "static";
     leftSide.appendChild(sheep);
     leftSide.appendChild(wolf);
     leftSide.appendChild(carrot);
@@ -55,22 +51,13 @@ start.addEventListener('click', () =>{
 
 restart.addEventListener('click', () =>{
 
-    looseScreen.style.display = "none";
-    startScreen.style.display = "block";
+    location.reload();
     
 })
 
 again.addEventListener('click', () =>{
     
-    sheep.style.position= "static";
-    wolf.style.position= "static";
-    carrot.style.position= "static";
-    leftSide.appendChild(sheep);
-    leftSide.appendChild(wolf);
-    leftSide.appendChild(carrot);
-
-    winScreen.style.display = "none";
-    startScreen.style.display = "block";
+    location.reload();
 
     
 })
