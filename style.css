@@ -22,10 +22,11 @@ body{
     background-color: white;
     border-radius: 20px;
     box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.425);
+    z-index: 100;
 }
 
 .boat{
-    width: 130px;
+    width: 110px;
     height: 130px;
 }
 
@@ -36,7 +37,7 @@ body{
 }
 
 .left{
-    flex: 0.4;
+    flex: 0.35;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -44,11 +45,11 @@ body{
 }
 
 .river{
-    flex: 0.3;
+    flex: 0.30;
 }
 
 .right{
-    flex: 0.3;
+    flex: 0.35;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -61,4 +62,8 @@ body{
     width: 90px;
     height: 90px;
     position: relative;
+}
+
+.animals:hover, .boat:hover{
+    transform: scale(1.08);
 }
